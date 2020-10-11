@@ -9,3 +9,15 @@ const chat_msg = ["Why didn't he come and talk to me himse...",
     "I’m sorry, I don’t have the info on that.."];
 const chat_msg_length = chat_msg.length;
 const chat_img_length = 7;
+
+class ChatHandler{
+
+    constructor(chat_template, chat_list){
+        this.hashmap = new Map();
+        this.linked_list = null;
+        this.chat_template = chat_template;
+        this.chat_list = chat_list;
+        let clock = new Date();
+        this.hours = clock.getHours();
+        this.mins = clock.getMinutes();
+    }
