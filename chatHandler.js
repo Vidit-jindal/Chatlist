@@ -21,3 +21,11 @@ class ChatHandler{
         this.hours = clock.getHours();
         this.mins = clock.getMinutes();
     }
+    
+    getTime(){
+        // Time Stamp creation for messages
+        this.mins += 1;
+        if(this.mins === 60){
+            this.hours += 1;
+            this.mins = 0;
+        }
