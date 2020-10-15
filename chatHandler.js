@@ -29,3 +29,13 @@ class ChatHandler{
             this.hours += 1;
             this.mins = 0;
         }
+        
+        return ("0" + this.hours).slice(-2)+":"+("0" + this.mins).slice(-2);
+    }
+
+    createNode(id){
+        // Creating node element
+        let node = {};
+        // Pointers to prev and next
+        node['next'] = null;
+        node['prev'] = null;
