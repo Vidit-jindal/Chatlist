@@ -49,3 +49,14 @@ class ChatHandler{
         node['chat_item'] = chat_item;
         return node;
     }
+    
+    newMsg(id){
+        let node = null;
+        if((id in this.hashmap ) === false){
+            // If node not in linked list
+            node = this.createNode(id);
+            this.hashmap[id] = node;
+        } else{
+            // If node in linked list
+            node = this.getNodeFromList(id);
+        }
