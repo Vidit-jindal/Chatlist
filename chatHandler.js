@@ -60,3 +60,16 @@ class ChatHandler{
             // If node in linked list
             node = this.getNodeFromList(id);
         }
+
+        if(this.linked_list === null){
+            // Setting head of empty list
+            this.linked_list = node;
+        } else{
+            // Adding node to head of linked list
+            node['next'] = this.linked_list;
+            if(this.linked_list!==null)
+                this.linked_list['prev'] = node;
+            this.linked_list = node;
+        }
+        this.updateList();
+    }
