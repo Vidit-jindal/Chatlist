@@ -73,3 +73,11 @@ class ChatHandler{
         }
         this.updateList();
     }
+    
+    deleteMsg(id){
+        let node = this.getNodeFromList(id);
+        // No use of node since it has been deleted
+        delete this.hashmap[id];
+        // Clear entry from hashmap
+        this.updateList();
+    }
