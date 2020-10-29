@@ -81,3 +81,14 @@ class ChatHandler{
         // Clear entry from hashmap
         this.updateList();
     }
+    
+    getNodeFromList(id){
+        let node = this.hashmap[id];
+        let prevNode = node['prev'];
+        let nextNode = node['next'];
+
+        // Update prev and next node pointers
+        if(prevNode!==null)
+            prevNode['next'] = nextNode;
+        if(nextNode!==null)
+            nextNode['prev'] = prevNode;
