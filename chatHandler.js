@@ -92,3 +92,11 @@ class ChatHandler{
             prevNode['next'] = nextNode;
         if(nextNode!==null)
             nextNode['prev'] = prevNode;
+// Update head of the linked list
+        if(node===this.linked_list){
+            this.linked_list = nextNode;
+        }
+        node['next'] = null;
+        node['prev'] = null;
+        return node;
+    }
