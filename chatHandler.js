@@ -100,3 +100,22 @@ class ChatHandler{
         node['prev'] = null;
         return node;
     }
+updateList(){
+        // Update the contents of the chat list
+        let innerHTML = '';
+        let head = this.linked_list;
+        while(head!==null){
+            let element = head['chat_item'];
+            if(head===this.linked_list){
+                element.className = "ks-item ks-active";
+                element.querySelector('#Time').innerText = this.getTime();
+            } else{
+                element.className = "ks-item";
+            }
+            innerHTML += element.outerHTML;
+            head = head['next'];
+        }
+        this.chat_list.innerHTML = innerHTML;
+    }
+
+}
